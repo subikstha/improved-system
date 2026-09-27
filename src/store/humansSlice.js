@@ -18,7 +18,17 @@ export const humansSlice = createSlice({
     }
   },
   // extraReducers: {
-  //   [someAction]: (state, action) => {}
+  //   [tasksSlice.actions.assignTo]: (state, action) => {
+  //     for (const human of state) {
+  //       if (human.id === action.payload.humanId) {
+  //         human.taskIds.push(action.payload.taskId);
+  //       } else {
+  //         human.taskIds = human.taskIds.filter(
+  //           (taskId) => taskId !== action.payload.taskId
+  //         );
+  //       }
+  //     }
+  //   }
   // }
   extraReducers: (builder) => {
     builder.addCase(tasksSlice.actions.assignTo, (state, action) => {

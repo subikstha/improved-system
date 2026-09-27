@@ -24,6 +24,12 @@ export const tasksSlice = createSlice({
       if (task) {
         task.completed = action.payload.completed;
       }
+    },
+    assignTo: (state, action) => {
+      const task = state.find((task) => task.id === action.payload.taskId);
+      if (task) {
+        task.assignedTo = action.payload.humanId;
+      }
     }
   }
 });
